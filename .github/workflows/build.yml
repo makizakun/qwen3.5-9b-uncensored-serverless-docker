@@ -31,4 +31,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: makizakun/qwen3.5-9b-uncensored-serverless:v01
+          tags: makizakun/qwen3.5-9b-uncensored-serverless:${{ github.sha }}
