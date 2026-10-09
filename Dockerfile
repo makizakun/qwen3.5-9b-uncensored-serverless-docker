@@ -9,4 +9,6 @@ RUN mkdir -p /models && \
     curl -L -o /models/qwen.gguf "https://huggingface.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive/resolve/main/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf"
 
 # Set the startup command for RunPod
-CMD ["--model", "/models/qwen.gguf", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["--model", "/models/qwen.gguf", "--host", "0.0.0.0", "--port", "8000", \
+     "--n-gpu-layers", "99", "--ctx-size", "8192", "--parallel", "1", \
+     "--jinja", "--alias", "qwen"]
